@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useEffect} from 'react'
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ActivityIndicator} from 'react-native';
 import { useState } from 'react'
 
 export default function App() {
@@ -21,8 +21,9 @@ getData()
 
   return (
     <View style={styles.container}>
+      <ActivityIndicator  size='large'/>
       {allRestaurants?.map(singleRest=> (
-      <Text key={singleRest.id}>{singleRest.name} </Text>))}
+      <Text key={singleRest.id}>{singleRest.name}</Text>))}
       {/* {allRestaurants?.map((singleRest=> {
         return <Text>{singleRest.name}</Text>
       }))} */}
